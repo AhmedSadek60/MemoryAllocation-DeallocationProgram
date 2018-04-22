@@ -25,7 +25,55 @@ namespace memalloc
             InitializeComponent();
         }
 
+        public int Best_fit(int process_index)
+        {
+            int index = 0;
+            int minsize = 0;
+            int diff;
+            for (int j = 0; j < NumHoles; j++)
+            {
+                if (((Hole)Holes_list[j]).filled == false)
+                {
+                    diff = ((Hole)Holes_list[j]).size - ((Process)Process_list[process_index]).size;
+                    if (j == 0)
+                    {
+                        if (diff == 0)
+                        {
+                            ((Hole)Holes_list[j]).assigned_process = (Process)Process_list[process_index];
+                            ((Process)Process_list[process_index]).my_hole = (Hole)Holes_list[j];
+                            ((Hole)Holes_list[j]).filled = true;
+                            break;
+                        }
+                        else if (diff > 0)
+                        {
+                            minsize = diff;
+                            index = j;
+                        }
+                        else
+                        {
+                            minsize = ((Process)Process_list[process_index]).size;
+                        }
+                    }
+                    else
+                    {
+                        if (diff == 0)
+                        {
+                            ((Hole)Holes_list[j]).assigned_process = (Process)Process_list[process_index];
+                            ((Process)Process_list[process_index]).my_hole = (Hole)Holes_list[j];
+                            ((Hole)Holes_list[j]).filled = true;
+                            break;
+                        }
+                        if (diff > 0 && Math.Abs(diff) < minsize)
+                        {
+                            minsize = diff;
+                            index = j;
+                        }
+                    }
+                }
 
+            }
+            return index;
+        }
        
         private void StartBtn_Click(object sender, EventArgs e)
         {
@@ -79,9 +127,14 @@ namespace memalloc
 
             else if (algorithm == "Best Fit")
             {
-
-
-
+                for (int i = 0; i < Process_list.Capacity; i++)
+                {
+                    int index;
+                    index = Best_fit(i);
+                    ((Hole)Holes_list[index]).assigned_process = (Process)Process_list[i];
+                    ((Process)Process_list[i]).my_hole = (Hole)Holes_list[index];
+                    ((Hole)Holes_list[index]).filled = true;
+                }
 
             }
 
@@ -108,9 +161,19 @@ namespace memalloc
             int process_index = int.Parse(Process_to_Allocate.Text)-1;
 
 
-            if (algorithm == "First Fit")
+            if (algorithm == "Best Fit")
             {
+                int index;
+                index = Best_fit(process_index);
+                ((Hole)Holes_list[index]).assigned_process = (Process)Process_list[process_index];
+                ((Process)Process_list[process_index]).my_hole = (Hole)Holes_list[index];
+                ((Hole)Holes_list[index]).filled = true;
+            }
 
+
+
+            else if (algorithm == "First Fit")
+            {
                 for (int j = 0; j < NumHoles; j++)
                 {
                     if (((Hole)Holes_list[j]).filled == false)
@@ -125,15 +188,6 @@ namespace memalloc
                     }
 
                 }
-
-
-            }
-
-
-
-            else if (algorithm == "Best Fit")
-            {
-
 
 
 

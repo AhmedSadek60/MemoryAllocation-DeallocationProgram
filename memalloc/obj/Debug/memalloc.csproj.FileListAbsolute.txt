@@ -17,3 +17,12 @@ C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.csprojResolveAssemblyRefere
 C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.Form1.resources
 C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.Properties.Resources.resources
 C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.csproj.GenerateResource.Cache
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\bin\Debug\memalloc.exe.config
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\obj\Debug\memalloc.exe
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\obj\Debug\memalloc.pdb
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\bin\Debug\memalloc.exe
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\bin\Debug\memalloc.pdb
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\obj\Debug\memalloc.csprojResolveAssemblyReference.cache
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\obj\Debug\memalloc.Form1.resources
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\obj\Debug\memalloc.Properties.Resources.resources
+C:\Users\zeina\Documents\GitHub\MemoryAllocation-DeallocationProgram\MemoryAllocation-DeallocationProgram\memalloc\obj\Debug\memalloc.csproj.GenerateResource.Cache
