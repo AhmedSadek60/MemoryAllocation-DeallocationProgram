@@ -1,0 +1,19 @@
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\bin\Debug\memalloc.exe.config
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\bin\Debug\memalloc.exe
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\bin\Debug\memalloc.pdb
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\obj\Debug\memalloc.Form1.resources
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\obj\Debug\memalloc.Properties.Resources.resources
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\obj\Debug\memalloc.csproj.GenerateResource.cache
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\obj\Debug\memalloc.csproj.CoreCompileInputs.cache
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\obj\Debug\memalloc.exe
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\obj\Debug\memalloc.pdb
+C:\Users\MrEng\Desktop\OS Project\memalloc\memalloc\obj\Debug\memalloc.csprojResolveAssemblyReference.cache
+C:\Users\zeina\Downloads\memalloc\bin\Debug\memalloc.exe.config
+C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.exe
+C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.pdb
+C:\Users\zeina\Downloads\memalloc\bin\Debug\memalloc.exe
+C:\Users\zeina\Downloads\memalloc\bin\Debug\memalloc.pdb
+C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.csprojResolveAssemblyReference.cache
+C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.Form1.resources
+C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.Properties.Resources.resources
+C:\Users\zeina\Downloads\memalloc\obj\Debug\memalloc.csproj.GenerateResource.Cache
