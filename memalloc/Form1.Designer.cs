@@ -44,10 +44,10 @@
             this.AllocateBtn = new System.Windows.Forms.Button();
             this.DeallocateBtn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.Process_to_Allocate = new System.Windows.Forms.TextBox();
-            this.Process_to_Deallocate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.algorithm_type = new System.Windows.Forms.ComboBox();
+            this.Process_to_Allocate = new System.Windows.Forms.ComboBox();
+            this.Process_to_Deallocate = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // StartBtn
@@ -72,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(311, 18);
+            this.label2.Location = new System.Drawing.Point(324, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 4;
@@ -100,28 +100,28 @@
             // 
             this.number_holes.Location = new System.Drawing.Point(142, 15);
             this.number_holes.Name = "number_holes";
-            this.number_holes.Size = new System.Drawing.Size(100, 20);
+            this.number_holes.Size = new System.Drawing.Size(121, 20);
             this.number_holes.TabIndex = 7;
             // 
             // starting_addresses
             // 
             this.starting_addresses.Location = new System.Drawing.Point(477, 15);
             this.starting_addresses.Name = "starting_addresses";
-            this.starting_addresses.Size = new System.Drawing.Size(100, 20);
+            this.starting_addresses.Size = new System.Drawing.Size(128, 20);
             this.starting_addresses.TabIndex = 8;
             // 
             // size_holes
             // 
-            this.size_holes.Location = new System.Drawing.Point(760, 15);
+            this.size_holes.Location = new System.Drawing.Point(750, 15);
             this.size_holes.Name = "size_holes";
-            this.size_holes.Size = new System.Drawing.Size(100, 20);
+            this.size_holes.Size = new System.Drawing.Size(132, 20);
             this.size_holes.TabIndex = 9;
             // 
             // memory_size
             // 
             this.memory_size.Location = new System.Drawing.Point(142, 76);
             this.memory_size.Name = "memory_size";
-            this.memory_size.Size = new System.Drawing.Size(100, 20);
+            this.memory_size.Size = new System.Drawing.Size(121, 20);
             this.memory_size.TabIndex = 10;
             // 
             // label5
@@ -146,14 +146,14 @@
             // 
             this.number_processes.Location = new System.Drawing.Point(477, 79);
             this.number_processes.Name = "number_processes";
-            this.number_processes.Size = new System.Drawing.Size(100, 20);
+            this.number_processes.Size = new System.Drawing.Size(128, 20);
             this.number_processes.TabIndex = 13;
             // 
             // size_processes
             // 
-            this.size_processes.Location = new System.Drawing.Point(760, 83);
+            this.size_processes.Location = new System.Drawing.Point(750, 83);
             this.size_processes.Name = "size_processes";
-            this.size_processes.Size = new System.Drawing.Size(100, 20);
+            this.size_processes.Size = new System.Drawing.Size(132, 20);
             this.size_processes.TabIndex = 14;
             // 
             // AllocateBtn
@@ -179,28 +179,10 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(314, 231);
+            this.listBox1.Location = new System.Drawing.Point(454, 125);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(235, 264);
             this.listBox1.TabIndex = 17;
-            // 
-            // Process_to_Allocate
-            // 
-            this.Process_to_Allocate.Location = new System.Drawing.Point(307, 404);
-            this.Process_to_Allocate.Name = "Process_to_Allocate";
-            this.Process_to_Allocate.Size = new System.Drawing.Size(127, 20);
-            this.Process_to_Allocate.TabIndex = 18;
-            this.Process_to_Allocate.Text = "process to allocate...";
-            this.Process_to_Allocate.Enter += new System.EventHandler(this.Process_to_Allocate_Enter);
-            // 
-            // Process_to_Deallocate
-            // 
-            this.Process_to_Deallocate.Location = new System.Drawing.Point(613, 404);
-            this.Process_to_Deallocate.Name = "Process_to_Deallocate";
-            this.Process_to_Deallocate.Size = new System.Drawing.Size(150, 20);
-            this.Process_to_Deallocate.TabIndex = 19;
-            this.Process_to_Deallocate.Text = "process to deallocate...";
-            this.Process_to_Deallocate.Enter += new System.EventHandler(this.Process_to_Deallocate_Enter);
             // 
             // label7
             // 
@@ -222,15 +204,31 @@
             this.algorithm_type.Size = new System.Drawing.Size(121, 21);
             this.algorithm_type.TabIndex = 21;
             // 
+            // Process_to_Allocate
+            // 
+            this.Process_to_Allocate.FormattingEnabled = true;
+            this.Process_to_Allocate.Location = new System.Drawing.Point(266, 404);
+            this.Process_to_Allocate.Name = "Process_to_Allocate";
+            this.Process_to_Allocate.Size = new System.Drawing.Size(141, 21);
+            this.Process_to_Allocate.TabIndex = 22;
+            // 
+            // Process_to_Deallocate
+            // 
+            this.Process_to_Deallocate.FormattingEnabled = true;
+            this.Process_to_Deallocate.Location = new System.Drawing.Point(623, 404);
+            this.Process_to_Deallocate.Name = "Process_to_Deallocate";
+            this.Process_to_Deallocate.Size = new System.Drawing.Size(129, 21);
+            this.Process_to_Deallocate.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 450);
-            this.Controls.Add(this.algorithm_type);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.Process_to_Deallocate);
             this.Controls.Add(this.Process_to_Allocate);
+            this.Controls.Add(this.algorithm_type);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.DeallocateBtn);
             this.Controls.Add(this.AllocateBtn);
@@ -271,10 +269,10 @@
         private System.Windows.Forms.Button AllocateBtn;
         private System.Windows.Forms.Button DeallocateBtn;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox Process_to_Allocate;
-        private System.Windows.Forms.TextBox Process_to_Deallocate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox algorithm_type;
+        private System.Windows.Forms.ComboBox Process_to_Allocate;
+        private System.Windows.Forms.ComboBox Process_to_Deallocate;
     }
 }
 
