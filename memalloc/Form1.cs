@@ -13,12 +13,10 @@ namespace memalloc
 {
     public partial class Form1 : Form
     {
-        int MemorySize, NumHoles, NumProcesses;
+        int MemorySize, NumHoles, NumProcesses,fnflag=0;
         string algorithm;
         ArrayList Holes_list = new ArrayList();
         ArrayList Process_list = new ArrayList();
-
-
 
         public Form1()
         {
@@ -28,17 +26,13 @@ namespace memalloc
         {
             for (int i = 0; i < NumHoles; i++)
             {
-
                 // listBox1.Items.Add(((Process)Process_list[i]).get_size());
-
                 if (((Hole)Holes_list[i]).filled == false)
                     listBox1.Items.Add("free hole");
                 else
                     listBox1.Items.Add(((Hole)Holes_list[i]).assigned_process.name);
-
             }
-            listBox1.Items.Add("\n");
-           
+            listBox1.Items.Add("\n");    
         }
 
         public void add_items_combobox()
@@ -71,15 +65,15 @@ namespace memalloc
                     {
                         if (diff == 0)
                         {
-                            ((Hole)Holes_list[j]).assigned_process = (Process)Process_list[process_index];
-                            ((Process)Process_list[process_index]).my_hole = (Hole)Holes_list[j];
-                            ((Hole)Holes_list[j]).filled = true;
+                            index = j;
+                            fnflag = 1;
                             break;
                         }
                         else if (diff > 0)
                         {
                             minsize = diff;
                             index = j;
+                            fnflag = 1;
                         }
                         else
                         {
@@ -90,21 +84,24 @@ namespace memalloc
                     {
                         if (diff == 0)
                         {
-                            ((Hole)Holes_list[j]).assigned_process = (Process)Process_list[process_index];
-                            ((Process)Process_list[process_index]).my_hole = (Hole)Holes_list[j];
-                            ((Hole)Holes_list[j]).filled = true;
+                            index = j;
+                            fnflag = 1;
                             break;
                         }
                         if (diff > 0 && Math.Abs(diff) < minsize)
                         {
                             minsize = diff;
                             index = j;
+                            fnflag = 1;
                         }
                     }
                 }
 
             }
-            return index;
+            if (fnflag == 1)
+                return index;
+            else
+                return 10000000;
         }
 
         private void StartBtn_Click(object sender, EventArgs e)
@@ -119,7 +116,6 @@ namespace memalloc
             string[] hole_sizes_array = holesizes.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string startingaddresses = starting_addresses.Text;
             string[] starting_addresses_array = startingaddresses.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
 
             for (int i = 0; i<NumHoles;i++)           // insert Hole objects into Holes Arraylist 
             {
@@ -154,43 +150,31 @@ namespace memalloc
                                 break;
                             }
                         }
-
                     }
-                    
-
                 }
 
             }
-
-
-
             else if (algorithm == "Best Fit")
             {
                 for (int i = 0; i < Process_list.Capacity; i++)
                 {
                     int index;
                     index = Best_fit(i);
-                    ((Hole)Holes_list[index]).assigned_process = (Process)Process_list[i];
-                    ((Process)Process_list[i]).my_hole = (Hole)Holes_list[index];
-                    ((Hole)Holes_list[index]).filled = true;
+                    if (fnflag == 1)
+                    {
+                        ((Hole)Holes_list[index]).assigned_process = (Process)Process_list[i];
+                        ((Process)Process_list[i]).my_hole = (Hole)Holes_list[index];
+                        ((Hole)Holes_list[index]).filled = true;
+                        fnflag = 0;
+                    }
                 }
             }
-
-
             add_items_combobox();     
-
             Print_listbox1();
-
-
-
-
         }
-
-
 
         private void AllocateBtn_Click(object sender, EventArgs e)
         {
-
             string  text = Process_to_Allocate.Text;
             int process_index = 0;
             for (int i = 0; i < NumProcesses; i++)
@@ -201,9 +185,7 @@ namespace memalloc
                     break;
                 }
             }
-
             int flag = 0;
-
             if (algorithm == "First Fit")
             {
 
@@ -230,30 +212,25 @@ namespace memalloc
 
 
             }
-
-
-
             else if (algorithm == "Best Fit")
             {
                 int index;
                 index = Best_fit(process_index);
-                ((Hole)Holes_list[index]).assigned_process = (Process)Process_list[process_index];
-                ((Process)Process_list[process_index]).my_hole = (Hole)Holes_list[index];
-                ((Hole)Holes_list[index]).filled = true;
-
-                flag = 1;      ///  add this line if the process allocated in a hole 
-
+                if (fnflag == 1)
+                {
+                    ((Hole)Holes_list[index]).assigned_process = (Process)Process_list[process_index];
+                    ((Process)Process_list[process_index]).my_hole = (Hole)Holes_list[index];
+                    ((Hole)Holes_list[index]).filled = true;
+                    fnflag = 0;
+                    flag = 1;      ///  add this line if the process allocated in a hole 
+                }
             }
-
             if(flag==1)
             {
                 Process_to_Allocate.Items.Remove(((Process)Process_list[process_index]).name);
                 Process_to_Deallocate.Items.Add(((Process)Process_list[process_index]).name);
             }
-
             Print_listbox1();
-
-
             Process_to_Allocate.Text = "process to allocate...";
         }
 
@@ -284,13 +261,9 @@ namespace memalloc
             
             Process_to_Deallocate.Items.Remove(((Process)Process_list[process_index]).name);
             Process_to_Allocate.Items.Add(((Process)Process_list[process_index]).name);
-            
             Print_listbox1();
-
             Process_to_Deallocate.Text = "process to allocate...";
         }
-
-        
 
     }
 }
